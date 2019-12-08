@@ -1,0 +1,11 @@
+table, th, td {
+	 border: 2px solid black;
+	 width: 1000;
+	 height: 700;
+	 text-align:center;
+	 
+}
+.banner{
+	border:1px solid red;
+    border-radius: 5px;
+}
