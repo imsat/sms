@@ -2,6 +2,10 @@
 session_start();
 include_once("connect.php");
 
+if(!isset($_SESSION['user'])){
+  header("location: index.php");
+}
+
 $id = $_GET['id'];
 
 $message = "";
@@ -35,6 +39,9 @@ if(isset($_POST['submit'])){
 	<link rel="stylesheet" href="stylee.css" />
 </head>
 <body>
+  <div style="float:right">
+    <a href="user.php" class="btn btn2" >Back</a>
+</div>
  <?php 
 	$query = "SELECT * FROM user WHERE id = '$id'";
 	if($result =mysqli_query($con, $query)){

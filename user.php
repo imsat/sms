@@ -1,4 +1,5 @@
 <?php
+
 	session_start();
 	$message = "";
  if(isset($_SESSION['message'])){
@@ -6,6 +7,16 @@
     }
 
 include_once("connect.php");
+
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['user']);
+  header("location: index.php");
+}
+
+if(!isset($_SESSION['user'])){
+  header("location: index.php");
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -15,11 +26,28 @@ include_once("connect.php");
 	<link rel="stylesheet" href="stylee.css" />
 </head>
 <body>
-<a href="index.php">
+ <?php  if (isset($_SESSION['user'])) : ?>
+  <div class="container">
+    <h4><b><?php echo $_SESSION['user']['name']; ?></b></h4>
+    <p><?php echo $_SESSION['user']['email']; ?></p>
+  </div>
+ <?php endif ?>
+<!-- <div style="float:right, display:inline-block;">
+   
+<h1>User: </h1>
+ 
+</div> -->
+<div style="float:right">
+
+  <a href="register.php" class="btn" >Register</a>
+  <a href="?logout='1'" class="btn btn2" >Logout</a>
+</div>
+
+
 <h3 align="center"><span style="color:green; "><?php echo $message; ?></span></h3>
 	<table style="width:100%">
   <tr>
-    <th>Firstname</th>
+    <th>Name</th>
     <th>Email</th> 
     <th>Address</th>
     <th>Action</th>
@@ -44,6 +72,6 @@ include_once("connect.php");
 	<?php unset($_SESSION['message']); ?>
 </table>
 
-<button type="submit"  class="backbtn" >Go Back</button></a>
+<!-- <button type="submit"  class="backbtn" >Go Back</button></a> -->
 </body>
 </html>

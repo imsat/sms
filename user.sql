@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 09, 2018 at 11:43 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Host: localhost:3306
+-- Generation Time: Dec 08, 2019 at 09:29 PM
+-- Server version: 5.7.28-0ubuntu0.18.04.4
+-- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `form`
+-- Database: `sms`
 --
 
 -- --------------------------------------------------------
@@ -41,15 +39,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `address`) VALUES
-(12, 'Biswajit Mondal ', 'biswajit@gmail.com', '14165151651', 'mirpur'),
-(16, 'fsdfsdgg ', 'tttttttt', '', 'Barishal'),
-(22, 'fgdfgd ', 'gdfgdgd', 'gdgdg', 'dfgdgdf'),
-(24, 'fsdgdg ', 'dfgdfg', 'dfgdfgdfgfd', 'gdgdfgd'),
-(25, 'hfhfhf ', 'hfhfhf', 'hfhfg', 'hfhfh'),
-(26, 'gdgd ', 'gdgdg', 'dgdg', 'dgd'),
-(27, 'fdfdgd ', 'gdgdg', 'dgdfg', 'dgdgd'),
-(32, 'hfgjgf ', 'vigi@gmail.com', 'fjgjgj', 'gjgjg'),
-(36, 'cxcbvcb ', 'vigi@gmail.com', 'pass', 'gdfgdfgfg');
+(16, 'Admin User', 'admin@mail.com', '123', 'Dhaka');
 
 --
 -- Indexes for dumped tables
@@ -69,9 +59,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-COMMIT;
-
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
